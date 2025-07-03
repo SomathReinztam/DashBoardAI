@@ -11,6 +11,7 @@ DashBoardAI es un sistema multi-agente que automatiza el proceso de análisis y 
 
 1.  Un **informe estadístico detallado** en formato Markdown.
 2.  Un Markdown que contiene una **aplicación web interactiva (dashboard)** construida con Streamlit.
+3.  Se supone que los datos ya estan limpios. El agente solo se límita al análisis.
 
 Este proyecto utiliza el poder de los Grandes Modelos de Lenguaje (LLMs) y arquitecturas de agentes, como **LangGraph** y **LangChain**, para orquestar un flujo de trabajo cognitivo donde diferentes agentes especializados colaboran para transformar datos crudos en insights accionables y visualizaciones funcionales.
 
