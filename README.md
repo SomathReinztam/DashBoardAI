@@ -19,7 +19,7 @@ Este proyecto utiliza el poder de los Grandes Modelos de Lenguaje (LLMs) y arqui
 
 -   🤖 **Arquitectura Multi-Agente:** Un agente *Analista* interpreta los datos y un agente *Coder* escribe el código del dashboard, simulando un equipo de ciencia de datos.
 -   🛠️ **Agentes con Herramientas:** Los agentes no solo razonan, sino que ejecutan código Python (`PythonAstREPLTool`) para realizar análisis reales sobre el DataFrame.
--   🔄 **Flujo de Trabajo Autónomo:** El sistema gestiona el ciclo completo: desde la ingesta de datos y el análisis hasta la generación de un producto final ejecutable (el dashboard).
+-   🔄 **Flujo de Trabajo Autónomo:** El sistema gestiona el ciclo completo: desde la ingesta de datos y el análisis hasta la generación de un producto final archivo Markdown que contiene el ejecutable (el dashboard).
 -   💻 **Generación de Código Funcional:** El resultado final no es solo un informe estático, sino un archivo marckdown que contiene aplicación Streamlit lista para ser desplegada.
 
 ---
