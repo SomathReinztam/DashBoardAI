@@ -142,10 +142,10 @@ Este proyecto utiliza la herramienta `PythonAstREPLTool`, que otorga al agente l
 ---
 ### 🛠️ Nota
 
-Si deseas que el agente analice un DataFrame diferente al proporcionado en este repositorio, debes modificar la variable `Coder_system_template` en el archivo `dashBoardAI.py`, cambiando la línea donde se carga el DataFrame, por ejemplo:
+Si deseas que el agente analice un DataFrame diferente al proporcionado en este repositorio, debes modificar la variable `Coder_system_template` en el archivo `dashBoardAI.py`, cambiando la línea donde se referencia el DataFrame actual, por ejemplo:
 
 ```python
-df = pd.read_csv("iris.csv", sep=",")
+Coder_system_template = """ ... df = pd.read_csv("iris.csv", sep=",") ... """
 ```
 
 Debes reemplazar `"iris.csv"` con el nombre del nuevo archivo que deseas utilizar.
