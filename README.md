@@ -7,7 +7,7 @@
 
 ### 🚀 ¿Qué es DashBoardAI?
 
-DashBoardAI es un sistema multi-agente que automatiza el proceso de análisis y visualización de datos. A partir de un simple archivo CSV, el sistema genera de forma autónoma:
+DashBoardAI es un sistema multi-agente que automatiza el proceso de análisis y visualización de datos. A partir de un simple archivo CSV, el sistema puede generar de forma autónoma:
 
 1.  Un **informe estadístico detallado** en formato Markdown.
 2.  Un Markdown que contiene una **aplicación web interactiva (dashboard)** construida con Streamlit.
@@ -29,7 +29,7 @@ El proceso se modela como un grafo de estados donde cada nodo representa un agen
 
 ![Grafo del Agente](https://github.com/SomathReinztam/DashBoardAI/raw/main/DashBoardAI/grafo_del_agente.png)
 
-1.  **Carga de Datos:** El usuario proporciona un archivo CSV.
+1.  **Carga de Datos:** El usuario carga un archivo CSV a traves de un DataFrame de pandas.
 2.  **Agente Analista (`Analyst`):**
     -   Recibe el DataFrame.
     -   Utiliza la herramienta `PythonAstREPLTool` para ejecutar código de análisis (e.g., `df.describe()`, `df.corr()`, etc.).
