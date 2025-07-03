@@ -98,11 +98,10 @@ El programa cargará esta variable de entorno automáticamente.
 
 #### 5. Ejecutar el Agente
 
-Asegúrate de tener tu archivo de datos (por ejemplo, `mi_dataset.csv`) en el directorio del proyecto. Luego, ejecuta el script principal:
+Asegúrate de tener tu archivo de datos (por ejemplo, en mi caso para este proyecto utilicé `iris.csv`) en el directorio del proyecto. Luego, ejecuta el script principal dashBoardAI.py:
 
 ```bash
-# Reemplaza 'ruta/a/tu/dataset.csv' con la ubicación de tu archivo
-python main.py --file 'ruta/a/tu/dataset.csv'
+dashBoardAI.py
 ```
 
 #### 6. Revisar los Resultados
@@ -110,14 +109,14 @@ python main.py --file 'ruta/a/tu/dataset.csv'
 Una vez que el script finalice, encontrarás dos archivos nuevos:
 
 -   `report_generado.md`: El informe de análisis estadístico.
--   `dashboard_generado.py`: El script de la aplicación Streamlit.
+-   `dashboard_generado.md`: El archivo Markdown que contiene el script de la aplicación Streamlit.
 
 #### 7. Lanzar el Dashboard
 
-Para ver tu dashboard interactivo, ejecuta el siguiente comando en tu terminal:
+Para ver tu dashboard interactivo, del archivo `dashboard_generado.md` extrae el ejecutable y copialo a un script de Python. En mi caso yo lo copié a un script llamado `streamlit.py`. Luego ejecuta el siguiente comando en tu terminal:
 
 ```bash
-streamlit run dashboard_generado.py
+streamlit run streamlit.py
 ```
 
 ---
@@ -127,7 +126,7 @@ streamlit run dashboard_generado.py
 -   **Entrada:** Cualquier archivo CSV que pueda ser leído por `pandas.read_csv()`.
 -   **Salida:**
     -   `report_generado.md`: Un archivo Markdown con el informe de análisis.
-    -   `dashboard_generado.py`: Un script de Python listo para ser ejecutado con Streamlit.
+    -   `dashboard_generado.md`: Un archivo que contiene un script de Python listo para ser ejecutado con Streamlit.
 
 ---
 
