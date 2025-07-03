@@ -157,7 +157,7 @@ Si quieres que el agente analice un data frame diferente al proporcionado en est
 -   **Democratización del Análisis:** Permite a usuarios sin experiencia en programación obtener análisis y dashboards interactivos de forma rápida.
 -   **Aceleración del Prototipado:** Reduce drásticamente el tiempo necesario para la exploración inicial de nuevos conjuntos de datos.
 -   **Sistemas Auto-Explicativos:** El informe generado sirve como documentación del "razonamiento" del LLM, abriendo la puerta a sistemas de IA más transparentes.
--  **Divulgación de como se desarrollan los agentes** En internet, creo que no hay mucho contenido en español del como se desarrollan los agentes a traves del framework de **langGraph** y **langChain**, este trabajo sirve como un muy buen ejemplo para empezar a estudiar el desarrollo de agentes dado que la arquitectura desarrollada aquí es simple.
+-  **Divulgación de como se desarrollan los agentes** Actualmente, creo que hay poco contenido en español sobre cómo se desarrollan agentes utilizando los frameworks **LangGraph** y **LangChain**. Este trabajo puede servir como un buen punto de partida para quienes deseen iniciarse en el desarrollo de agentes, ya que presenta una arquitectura sencilla y fácil de entender.
 
 ---
 
