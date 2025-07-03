@@ -140,7 +140,14 @@ Este proyecto utiliza la herramienta `PythonAstREPLTool`, que otorga al agente l
 ---
 ### 🛠️ Nota
 
-Si quieres que el agente analice un data frame diferente al proporcionado en este repositorio, entonces debes especificar el cambio dentro de la variable Coder_system_template en el archivo dashBoardAI.py, cambiando el nombre de la referencia del data frame del anterior `df = pd.read_csv(iris.csv, sep=',')` a el nuevo. O también puedes dejarlo como estaba y en el archivo Markdown que contiene el ejeutable del dashboard de Streamlit poner bien la referencia a DataFrame nuevo.
+Si deseas que el agente analice un DataFrame diferente al proporcionado en este repositorio, debes modificar la variable `Coder_system_template` en el archivo `dashBoardAI.py`, cambiando la línea donde se carga el DataFrame, por ejemplo:
+
+```python
+df = pd.read_csv("iris.csv", sep=",")
+```
+
+Debes reemplazar `"iris.csv"` con el nombre del nuevo archivo que deseas utilizar.
+Alternativamente, puedes dejar esa línea como está y simplemente asegurarte de que, en el archivo Markdown que contiene el ejecutable del dashboard de Streamlit, se haga referencia correctamente al nuevo DataFrame.
 
 ---
 
