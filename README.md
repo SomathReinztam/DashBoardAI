@@ -167,3 +167,5 @@ Si quieres que el agente analice un data frame diferente al proporcionado en est
 - En futuras versiones del proyecto, se podrá mejorar la abstracción y robustez del sistema. Actualmente, cambiar el DataFrame a analizar requiere modificaciones manuales poco prácticas. Además, se podría trabajar para que el resultado final sea un ejecutable autónomo del dashboard en Python, en lugar de un archivo Markdown que lo contiene.
 
 - También debido a las restricciones de la API gratuita, fue necesario limitar la cantidad de DataFrames que pueden analizarse en paralelo. Esta es una limitación significativa, ya que en contextos reales los datasets suelen estar relacionados y deben ser analizados de forma conjunta.
+
+- El agente no hace limpiesa de datos o pre-procesamiento de los datos. En futuras versiones esta caracteristica se podría implementar
