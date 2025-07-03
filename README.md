@@ -138,9 +138,10 @@ Este proyecto utiliza la herramienta `PythonAstREPLTool`, que otorga al agente l
 
 **No ejecutes este agente en un entorno de producción o con datos sensibles sin implementar medidas de sandboxing adecuadas.** Úsalo con fines educativos y de experimentación en un entorno controlado.
 
+---
 ### ⚠️ Nota
 
-Si quieres que el agente analice un data frame diferente al proporcionado en este repositorio debes especificar el cambio dentro de la bariable Coder_system_template en el archivo dashBoardAI.py, cambiando el nombre de la referencia del data frame del anterior `df = pd.read_csv(iris.csv, sep=',')` a el nuevo.
+Si quieres que el agente analice un data frame diferente al proporcionado en este repositorio debes especificar el cambio dentro de la bariable Coder_system_template en el archivo dashBoardAI.py, cambiando el nombre de la referencia del data frame del anterior `df = pd.read_csv(iris.csv, sep=',')` a el nuevo. O también puedes dejarlo como estaba y en el archivo Markdown que contiene el ejeutable del dashboard de Streamlit poner bien la referencia a DataFrame nuevo.
 
 ---
 
