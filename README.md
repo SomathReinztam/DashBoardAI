@@ -126,7 +126,7 @@ streamlit run streamlit.py
 -   **Entrada:** Cualquier archivo CSV que pueda ser leído por `pandas.read_csv()`.
 -   **Salida:**
     -   `report_generado.md`: Un archivo Markdown con el informe de análisis.
-    -   `dashboard_generado.md`: Un archivo que contiene un script de Python listo para ser ejecutado con Streamlit.
+    -   `dashboard_generado.md`: Un archivo Markdown que contiene un script de Python que puede ser extraido y luego ser ejecutado con Streamlit.
 
 ---
 
