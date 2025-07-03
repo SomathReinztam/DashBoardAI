@@ -181,4 +181,4 @@ Alternativamente, puedes dejar esa línea como está y simplemente asegurarte de
 
 - El agente no hace limpiesa de datos o pre-procesamiento de los datos. En futuras versiones esta caracteristica se podría implementar
 
-- En versiones futuras se podrá implementar tabien que además del análisis de los datos, el agente tambien se encargue de inferencia a aprtir de estos; construllendo modelos y hacer fine-tuning de estos de forma automática.
+- En versiones futuras se podrá implementar tabien que además del análisis de los datos, el agente tambien se encargue de inferencia a aprtir de estos; construyendo modelos y hacer fine-tuning de estos de forma automática.
