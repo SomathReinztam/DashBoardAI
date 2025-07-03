@@ -1,81 +1,169 @@
+# DashBoardAI 🧠📊 Agente Multi-Rol para Análisis y Visualización de Datos
+## Por Thomas Martínes Velásques - Estudiante de Matemáticas - Universidad Nacional 
 
-# 🧠📊 Agente Multi-Rol para Análisis de Datos y Visualización con LangGraph + Streamlit
+**Proyecto creado para la Hackatón Deeppunk 2025**
 
-Este proyecto implementa un **multi-agente inteligente** construido con [LangGraph](https://github.com/langchain-ai/langgraph) y [LangChain](https://www.langchain.com/) que realiza de manera autónoma un **análisis estadístico de un DataFrame de pandas** y genera un **dashboard interactivo con Streamlit** a partir del análisis.
+---
 
-## 🚀 ¿Qué hace este proyecto?
+### 🚀 ¿Qué es DashBoardAI?
 
-Este sistema simula la colaboración entre dos expertos virtuales:
-- 👨‍🔬 **Analyst Agent**: un analista de datos que explora, describe y sintetiza estadísticamente un DataFrame.
-- 👨‍💻 **Coder Agent**: un desarrollador que convierte el informe del analista en una aplicación visual y ejecutable en Streamlit.
+DashBoardAI es un sistema multi-agente que automatiza el proceso de análisis y visualización de datos. A partir de un simple archivo CSV, el sistema genera de forma autónoma:
 
-### Flujo de trabajo automatizado:
-1. El analista inspecciona el DataFrame (`df`) usando herramientas de Python como `df.info()`, `df.describe()` y llamadas a visualizaciones (sin ejecutarlas).
-2. El resultado es un informe detallado en formato Markdown que incluye resúmenes y código para visualizaciones con Plotly.
-3. El programador toma ese informe y genera una app de Streamlit limpia, funcional e interactiva.
+1.  Un **informe estadístico detallado** en formato Markdown.
+2.  Un Markdown que contiene una **aplicación web interactiva (dashboard)** construida con Streamlit.
 
-## 🔧 Detalles técnicos
+Este proyecto utiliza el poder de los Grandes Modelos de Lenguaje (LLMs) y arquitecturas de agentes, como **LangGraph** y **LangChain**, para orquestar un flujo de trabajo cognitivo donde diferentes agentes especializados colaboran para transformar datos crudos en insights accionables y visualizaciones funcionales.
 
-### 📚 Tecnologías principales
-- **LangGraph + LangChain**: para modelar y coordinar agentes con memoria y herramientas.
-- **ChatGroq (LLaMA3-70B)**: LLMs especializados en razonamiento estructurado y generación creativa.
-- **PythonAstREPLTool**: permite a los LLM ejecutar código sobre el DataFrame en un entorno controlado.
-- **Streamlit**: framework para visualización rápida de datos y dashboards interactivos.
-- **Plotly**: visualizaciones interactivas para la web.
+### ✨ Características Principales
 
-### 🧩 Estructura del sistema
-- `Analyst Agent`: accede a `df`, genera preguntas, ejecuta código Python real para explorar datos y sintetiza un informe.
-- `ToolNode`: ejecuta las herramientas necesarias cuando el analista decide usarlas.
-- `Coder Agent`: interpreta el informe y crea código listo para ejecutar con `streamlit run`.
+-   🤖 **Arquitectura Multi-Agente:** Un agente *Analista* interpreta los datos y un agente *Coder* escribe el código del dashboard, simulando un equipo de ciencia de datos.
+-   🛠️ **Agentes con Herramientas:** Los agentes no solo razonan, sino que ejecutan código Python (`PythonAstREPLTool`) para realizar análisis reales sobre el DataFrame.
+-   🔄 **Flujo de Trabajo Autónomo:** El sistema gestiona el ciclo completo: desde la ingesta de datos y el análisis hasta la generación de un producto final ejecutable (el dashboard).
+-   💻 **Generación de Código Funcional:** El resultado final no es solo un informe estático, sino un archivo marckdown que contiene aplicación Streamlit lista para ser desplegada.
 
-### 📂 Entrada y salida
-- **Entrada**: cualquier archivo CSV legible por pandas (`df = pd.read_csv()`).
-- **Salida**:
-  - Un archivo de texto con el informe de análisis (`report_generado.txt`).
-  - Un archivo `.py` con el dashboard listo para correr (`dashboard_generado.py`).
+---
 
-## 🧠 ¿Por qué es innovador?
+### 🔧 Flujo de Trabajo y Arquitectura
 
-- 🤖 **Multi-agencia cognitiva real**: usa una arquitectura de flujo condicional entre agentes especializados.
-- 🛠️ **Agentes con herramientas ejecutables**: no solo "hablan", también actúan sobre datos reales.
-- 🔄 **Autonomía en ciclos de razonamiento**: el analista decide cuándo necesita más datos y cuándo pasar al programador.
-- 💻 **Producción de código funcional**: el resultado no es un informe estático, sino una aplicación real que se puede desplegar.
+El proceso se modela como un grafo de estados donde cada nodo representa un agente o una herramienta.
 
-## 🌍 Impacto del proyecto
+![Grafo del Agente](https://github.com/SomathReinztam/DashBoardAI/raw/main/DashBoardAI/grafo_del_agente.png)
 
-- Democratiza el análisis de datos: permite a usuarios sin conocimientos avanzados obtener insights y dashboards interactivos automáticamente.
-- Acelera el prototipado en ciencia de datos: ideal para exploración rápida de nuevos datasets.
-- Abre puertas a sistemas auto-explicativos: los LLM no solo dan respuestas, también documentan su pensamiento.
+1.  **Carga de Datos:** El usuario proporciona un archivo CSV.
+2.  **Agente Analista (`Analyst`):**
+    -   Recibe el DataFrame.
+    -   Utiliza la herramienta `PythonAstREPLTool` para ejecutar código de análisis (e.g., `df.describe()`, `df.corr()`, etc.).
+    -   Genera un informe detallado en Markdown (`report_generado.md`) con sus hallazgos y sugerencias de visualización.
+3.  **Agente Programador (`Coder`):**
+    -   Recibe el informe del analista.
+    -   Escribe el código Python para una aplicación Streamlit que visualiza los insights del informe usando librerías como Plotly.
+    -   Guarda el código en un archivo `dashboard_generado.mk`, que contiene el código para generar el dashboard en Streamlit.
 
-## ⚖️ Consideraciones éticas
+---
 
-- ⚠️ **Transparencia de decisiones**: el informe debe revisarse antes de tomar decisiones críticas, ya que el LLM puede cometer errores.
-- 🔒 **Privacidad de datos**: asegúrate de no usar este sistema con datos sensibles sin aplicar técnicas de anonimización o controles adecuados.
-- 🤖 **Uso responsable de la automatización**: este agente **no reemplaza** el juicio humano experto, sino que lo complementa.
+### 📚 Tecnologías Utilizadas
 
-## ▶️ ¿Cómo usarlo?
+-   **Orquestación de Agentes:** LangGraph y LangChain
+-   **Modelo de Lenguaje (LLM):** LLaMA3-70B a través de la API de Groq para inferencia de alta velocidad. Donde resalto que LLama es un LLM de código abierto.
+-   **Dashboard Interactivo:** Streamlit
+-   **Visualización de Datos:** Plotly
+-   **Análisis de Datos:** Pandas
 
-1. Instala dependencias necesarias:
-   ```bash
-   pip install pandas streamlit plotly langgraph langchain langchain-groq
-   ```
+---
 
-2. Configura tu archivo `.env` con tu clave de Groq:
-   ```env
-   GROQ_API_KEY=tu_clave
-   ```
+### ▶️ Instalación y Uso
 
-3. Ejecuta el script principal:
-   ```bash
-   python main.py
-   ```
+Sigue estos pasos para poner en marcha el proyecto en tu entorno local.
 
-4. Corre el dashboard generado:
-   ```bash
-   streamlit run dashboard_generado.py
-   ```
+#### Prerrequisitos
 
-## 📌 Autor
+-   Python 3.10 o superior (desarrollado y probado con Python 3.11).
+-   Git para clonar el repositorio.
 
-Desarrollado por Thomas Martínez Velásquez  
-Estudiante de Matemáticas – Universidad Nacional de Colombia
+#### 1. Clonar el Repositorio
+
+```bash
+git clone https://github.com/SomathReinztam/DashBoardAI.git
+cd DashBoardAI
+```
+
+#### 2. Crear un Entorno Virtual (Recomendado)
+
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+#### 3. Instalar Dependencias
+
+Todas las librerías necesarias se encuentran en `requirements.txt`.
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 4. Configurar la API Key
+
+Este proyecto requiere una clave de API de **Groq**. Puedes obtener una de forma gratuita en [su plataforma](https://console.groq.com/keys).
+
+Crea un archivo llamado `.env` en la raíz del proyecto y añade tu clave:
+
+```
+# .env
+GROQ_API_KEY="tu_api_key_aqui"
+```
+
+El programa cargará esta variable de entorno automáticamente.
+
+#### 5. Ejecutar el Agente
+
+Asegúrate de tener tu archivo de datos (por ejemplo, `mi_dataset.csv`) en el directorio del proyecto. Luego, ejecuta el script principal:
+
+```bash
+# Reemplaza 'ruta/a/tu/dataset.csv' con la ubicación de tu archivo
+python main.py --file 'ruta/a/tu/dataset.csv'
+```
+
+#### 6. Revisar los Resultados
+
+Una vez que el script finalice, encontrarás dos archivos nuevos:
+
+-   `report_generado.md`: El informe de análisis estadístico.
+-   `dashboard_generado.py`: El script de la aplicación Streamlit.
+
+#### 7. Lanzar el Dashboard
+
+Para ver tu dashboard interactivo, ejecuta el siguiente comando en tu terminal:
+
+```bash
+streamlit run dashboard_generado.py
+```
+
+---
+
+### 📂 Estructura de Entrada y Salida
+
+-   **Entrada:** Cualquier archivo CSV que pueda ser leído por `pandas.read_csv()`.
+-   **Salida:**
+    -   `report_generado.md`: Un archivo Markdown con el informe de análisis.
+    -   `dashboard_generado.py`: Un script de Python listo para ser ejecutado con Streamlit.
+
+---
+
+### ⚠️ Advertencia de Seguridad Importante
+
+Este proyecto utiliza la herramienta `PythonAstREPLTool`, que otorga al agente la capacidad de **ejecutar código Python arbitrario** en el sistema donde se corre. Esto representa una vulnerabilidad de seguridad significativa.
+
+
+**No ejecutes este agente en un entorno de producción o con datos sensibles sin implementar medidas de sandboxing adecuadas.** Úsalo con fines educativos y de experimentación en un entorno controlado.
+
+### ⚠️ Nota
+
+Si quieres que el agente analice un data frame diferente al proporcionado en este repositorio debes especificar el cambio dentro de la bariable Coder_system_template en el archivo dashBoardAI.py, cambiando el nombre de la referencia del data frame del anterior `df = pd.read_csv(iris.csv, sep=',')` a el nuevo.
+
+---
+
+### ⚖️ Consideraciones Éticas
+
+-   **Transparencia:** Los LLMs pueden cometer errores o "alucinar". Revisa siempre el informe y el código generado antes de tomar decisiones basadas en ellos.
+-   **Privacidad de Datos:** No utilices este sistema con datos personales o sensibles sin haber aplicado previamente técnicas de anonimización.
+-   **Uso Responsable:** Esta herramienta está diseñada para aumentar y complementar el juicio humano, no para reemplazarlo. La supervisión de un experto es fundamental.
+
+---
+
+### 🌍 Impacto y Visión
+
+-   **Democratización del Análisis:** Permite a usuarios sin experiencia en programación obtener análisis y dashboards interactivos de forma rápida.
+-   **Aceleración del Prototipado:** Reduce drásticamente el tiempo necesario para la exploración inicial de nuevos conjuntos de datos.
+-   **Sistemas Auto-Explicativos:** El informe generado sirve como documentación del "razonamiento" del LLM, abriendo la puerta a sistemas de IA más transparentes.
+-  **Divulgación de como se desarrollan los agentes** En internet, creo que no hay mucho contenido en español del como se desarrollan los agentes a traves del framework de **langGraph** y **langChain**, este trabajo sirve como un muy buen ejemplo para empezar a estudiar el desarrollo de agentes dado que la arquitectura desarrollada aquí es simple.
+
+---
+
+### ✨ Cosas a mejorar
+
+- La arquitectura del sistema multi-agente es bastante sencilla, principalmente debido a las limitaciones de utilizar una API gratuita, lo cual restringe las opciones de diseño e implementación.
+
+- En futuras versiones del proyecto, se podrá mejorar la abstracción y robustez del sistema. Actualmente, cambiar el DataFrame a analizar requiere modificaciones manuales poco prácticas. Además, se podría trabajar para que el resultado final sea un ejecutable autónomo del dashboard en Python, en lugar de un archivo Markdown que lo contiene.
+
+- También debido a las restricciones de la API gratuita, fue necesario limitar la cantidad de DataFrames que pueden analizarse en paralelo. Esta es una limitación significativa, ya que en contextos reales los datasets suelen estar relacionados y deben ser analizados de forma conjunta.
