@@ -158,6 +158,7 @@ Alternativamente, puedes dejar esa línea como está y simplemente asegurarte de
 -   **Transparencia:** Los LLMs pueden cometer errores o "alucinar". Revisa siempre el informe y el código generado antes de tomar decisiones basadas en ellos.
 -   **Privacidad de Datos:** No utilices este sistema con datos personales o sensibles sin haber aplicado previamente técnicas de anonimización.
 -   **Uso Responsable:** Esta herramienta está diseñada para aumentar y complementar el juicio humano, no para reemplazarlo. La supervisión de un experto es fundamental.
+-   **Vulnerabilidad de seguridad** Este código tiene una vulnerabilidad de seguridad importante. Se debe ser transparente con esto.
 
 ---
 
