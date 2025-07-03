@@ -96,6 +96,8 @@ GROQ_API_KEY="tu_api_key_aqui"
 
 El programa cargará esta variable de entorno automáticamente.
 
+También puedes optar por otras APIs como la de OpenAI o Google pero debes instalar los modulos adecuados de LangChain.
+
 #### 5. Ejecutar el Agente
 
 Asegúrate de tener tu archivo de datos (por ejemplo, en mi caso para este proyecto utilicé `iris.csv`) en el directorio del proyecto. Luego, ejecuta el script principal dashBoardAI.py:
